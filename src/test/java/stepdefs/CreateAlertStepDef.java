@@ -44,7 +44,7 @@ public class CreateAlertStepDef {
     }
     @And("sign in with valid credentials")
     public void sign_in_with_valid_credentials() throws IOException {
-    elements.getSignInLink().click();
+        elements.getSignInLink().click();
         elements.getEmailTextField().sendKeys(configReader.readFromPropertyFile("email"));
         elements.getPasswordTextField().sendKeys(configReader.readFromPropertyFile("pass"));
         elements.getSignInButton().click();

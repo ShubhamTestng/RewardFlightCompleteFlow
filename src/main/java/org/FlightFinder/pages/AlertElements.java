@@ -142,7 +142,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
         @FindBy(xpath="//button[text()='Search Now']")
         WebElement searchButton;
 
-        @FindBy(xpath="//button[text()='Create Alert']")
+        @FindBy(xpath="//button/span[text()='Create Alert']")
         WebElement createAlertButton;
 
         @FindBy(xpath="//input[@name='departStartDate']")
@@ -310,7 +310,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
         }
 
         public WebElement getEditAlertButton() {
-            WebElement editAlertButton = driver.findElement(By.xpath("//span[text()='15.07.2024 - 22.07.2024'][1]/ancestor::div[@class='alert-box droppable']//p[text()='Edit Alert']"));
+            WebElement editAlertButton = driver.findElement(By.xpath("//span[text()='15.08.2024 - 22.08.2024'][1]/ancestor::div[@class='alert-box droppable']//p[text()='Edit Alert']"));
             return editAlertButton;
         }
 
