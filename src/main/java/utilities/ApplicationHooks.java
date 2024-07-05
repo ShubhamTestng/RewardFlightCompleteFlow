@@ -3,6 +3,7 @@ package utilities;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.FlightFinder.pages.LoginPage;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +15,7 @@ public class ApplicationHooks {
 
     private DriverFactory driverFactory;
     private WebDriver driver;
-    private ConfigReader configReader;
+    public ConfigReader configReader;
 
 
     @Before(order = 0)

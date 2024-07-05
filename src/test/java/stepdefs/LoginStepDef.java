@@ -11,23 +11,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utilities.ApplicationHooks;
 import utilities.ConfigReader;
 import utilities.DriverFactory;
-
 import java.io.IOException;
 import java.time.Duration;
 
-public class LoginStepDef  {
-
-    private LoginPage elements;
+public class LoginStepDef {
+    public LoginPage elements;
     private WebDriverWait wait;
-    private ConfigReader configReader;
+    public ConfigReader configReader;
     WebDriver driver = DriverFactory.getDriver();
 
     @Given("user is on login page")
     public void user_is_on_login_page() throws Throwable {
-        configReader = new ConfigReader();
         elements = new LoginPage(driver);
+        configReader = new ConfigReader();
         try{driver.get(configReader.readFromPropertyFile("url"));}
         catch (WebDriverException e) {}
         try{
@@ -45,6 +44,17 @@ public class LoginStepDef  {
     @And("user enters password")
     public void user_enters_password() throws IOException {
         elements.getPasswordTextField().sendKeys(configReader.readFromPropertyFile("pass"));
+    }
+
+    @When("user enters invalid password")
+    public void user_enters_invalid_password() {
+        elements.getPasswordTextField().sendKeys("Password123");
+    }
+
+    @Then("user should get an error message")
+    public void user_should_get_an_error() {
+        String errorMsg = elements.getErrorMsg().getText();
+        org.testng.Assert.assertEquals(errorMsg, "Invalid email or password.");
     }
 
     @And("user clicks on Login button")

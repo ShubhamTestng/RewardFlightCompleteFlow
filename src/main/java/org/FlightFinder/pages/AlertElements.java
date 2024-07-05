@@ -18,9 +18,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
             PageFactory.initElements(driver, this);
         }
 
-
-
-
         public WebElement getAcceptCookies() {
 
             return acceptCookies;
@@ -128,7 +125,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
         @FindBy(xpath="//input[@name='email']")
         WebElement emailTextField;
-
 
         @FindBy(xpath="//input[@name='password']")
         WebElement passwordTextField;
@@ -266,14 +262,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
             return activeAlertText;
         }
 
-
-        @FindBy(xpath="//span[@class='error-msg']")
-        WebElement errorMsg;
-
-        public WebElement getErrorMsg() {
-
-            return errorMsg;
-        }
 
         @FindBy(xpath="//button[@aria-label='addPas']")
         WebElement addPassengersButton;

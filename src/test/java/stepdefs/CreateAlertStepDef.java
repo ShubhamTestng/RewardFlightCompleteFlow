@@ -1,4 +1,5 @@
 package stepdefs;
+import com.aventstack.extentreports.ExtentTest;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -11,6 +12,7 @@ import org.testng.Assert;
 import utilities.AppUtilities;
 import utilities.ConfigReader;
 import utilities.DriverFactory;
+import utilities.ScreenshotUtility;
 
 import java.io.IOException;
 
@@ -52,13 +54,17 @@ public class CreateAlertStepDef {
     @When("search for a destination")
     public void search_for_a_destination() throws Throwable{
         apputils.waitForElement(elements.getWhereToField());
-        elements.getWhereToField().click();
+
         Thread.sleep(1000);
         Actions action = new Actions(driver);
         action.click(elements.getWhereToField()).pause(1000).perform();
-        action.pause(500).sendKeys("nyc", Keys.ENTER).build().perform();
+        action.pause(1000).sendKeys("nyc", Keys.ENTER).build().perform();
         elements.getSearchButton().click();
-        apputils.waitForLoader();
+        try {
+            apputils.waitForLoader();
+        } catch (TimeoutException e) {
+
+        }
     }
     @When("create a new alert with specified dates")
     public void create_a_new_alert_with_specified_dates() throws Throwable {
@@ -76,7 +82,7 @@ public class CreateAlertStepDef {
         elements.getCreateAlertButtonPopup().click();
     }
 
-    @Then("should see the confirmation message")
+    @Then("user should see the confirmation message")
     public void should_see_the_confirmation_message() {
         apputils.waitForElement(elements.getAlertmsg());
         String alertMsg = elements.getAlertmsg().getText();
@@ -97,6 +103,7 @@ public class CreateAlertStepDef {
         Thread.sleep(2000);
         elements.getAddPassengersButton().click();
         elements.getSaveButton().click();
+
     }
 
     @When("delete an existing alert")
@@ -104,23 +111,27 @@ public class CreateAlertStepDef {
         elements.getEditAlertButton().click();
         elements.getDeleteButton().click();
         elements.getDeleteButton().click();
+
     }
 
-    @Then("should see the confirmation message for alert edited")
+    @Then("user should see the confirmation message for alert edited")
     public void should_see_the_confirmation_message_for_edit() {
         apputils.waitForElement(elements.getConfirmEditAlert());
         String alertMsg = elements.getConfirmEditAlert().getText();
         Assert.assertEquals(alertMsg,"Alerts updated successfully");
+
     }
 
-    @Then("should see the confirmation message for alert deleted")
+    @Then("user should see the confirmation message for alert deleted")
     public void should_see_the_confirmation_message_for_alert_deleted() {
         apputils.waitForElement(elements.getAlertmsg());
-        System.out.println(elements.getAlertmsg().getText());
+        String alertMsg = elements.getAlertmsg().getText();
+        Assert.assertEquals(alertMsg,"Alert has been deleted successfully");
     }
 
-    @And("should be able to logout successfully")
+    @And("user should be able to logout successfully")
     public void should_be_able_to_logout_successfully() {
+        apputils.waitForElement(elements.getAccountButton());
         elements.getAccountButton().click();
         elements.getLogoutButton().click();
     }

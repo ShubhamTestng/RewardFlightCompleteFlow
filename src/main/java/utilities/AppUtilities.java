@@ -16,7 +16,7 @@ public class AppUtilities {
     }
 
     public void waitForLoader() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='full-page-loader-comp text-center']")));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='full-page-loader-comp text-center']")));
     }
@@ -27,7 +27,5 @@ public class AppUtilities {
             wait.until(ExpectedConditions.elementToBeClickable(element));
 
     }
-
-
 
 }

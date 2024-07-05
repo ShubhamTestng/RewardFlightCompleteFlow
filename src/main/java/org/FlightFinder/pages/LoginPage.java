@@ -20,7 +20,6 @@ public class LoginPage {
     }
 
 
-
     @FindBy(xpath="//button[text()='I agree']")
     WebElement acceptCookies;
 
@@ -42,9 +41,10 @@ public class LoginPage {
     @FindBy(xpath="//span[text()='Logout']")
     WebElement logoutButton;
 
+    @FindBy(xpath="//span[@class='error-msg']")
+    WebElement errorMsg;
 
     public WebElement getAcceptCookies() {
-
         return acceptCookies;
     }
 
@@ -78,4 +78,8 @@ public class LoginPage {
         return logoutButton;
     }
 
+    public WebElement getErrorMsg() {
+
+        return errorMsg;
+    }
 }
