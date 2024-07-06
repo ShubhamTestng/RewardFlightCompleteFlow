@@ -22,7 +22,6 @@
         <enableOfflineMode>false</enableOfflineMode>
 
         <!-- use thumbnails for base64 images -->
-        <!-- this may slowdown viewing tests -->`enter code here`
         <thumbnailForBase64>false</thumbnailForBase64>
 
         <!-- title of the document -->
