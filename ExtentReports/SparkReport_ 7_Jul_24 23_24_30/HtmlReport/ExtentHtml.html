@@ -39,7 +39,6 @@
 		<!-- slideout menu -->
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
-			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
 			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
 		</ul>
 		<!-- report name -->
@@ -49,7 +48,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>Jul 6, 2024 07:08:00 am</span>
+			<span class='label blue darken-3 suite-start-time'>Jul 7, 2024 11:24:30 pm</span>
 			</a>
 		</ul>
 	</div>
@@ -65,7 +64,6 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
-					<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -109,12 +107,12 @@
                     <canvas id='parent-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='$75%'>
-                    <span class='strong'>3</span> features passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='$100%'>
+                    <span class='strong'>4</span> features passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='25%'>
-                    1</span> features failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> features failed, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
                     0</span> skipped
                 </div>
@@ -127,12 +125,12 @@
                     <canvas id='child-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='85%'>
-                    <span class='strong'>6</span> scenarios passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'>
+                    <span class='strong'>11</span> scenarios passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='14%'>
-                    1</span> scenarios failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> scenarios failed, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
                     0</span> skipped, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
@@ -147,14 +145,14 @@
                     <canvas id='grandchild-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='87%'>
-                    <span class='strong'>42</span> steps passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'>
+                    <span class='strong'>75</span> steps passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='2%'>
-                    1</span> steps failed, 
-                    <span class='strong tooltipped' data-position='top' data-tooltip='10%'>
-                    5</span> skipped, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> steps failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> skipped, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
                     0</span> others
                 </div>
@@ -175,81 +173,10 @@
 	<div class='subview-left left'>
 		<div class='view-summary'>
 			<ul id='test-collection' class='test-collection'>
-				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
-					<div class='test-heading'>
-						<span class='test-name'>Sign-Up</span>
-						<span class='test-time'>Jul 6, 2024 07:08:01 am</span>
-						<span class='test-status right fail'>Fail</span>
-					</div>
-					<div class='test-content hide'>
-<div class="sr-filters bdd-filters">
-	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
-	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
-	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
-	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
-</div>
-
-<div class='scenario node' test-id='2' status='fail'>
-
-	<span class='duration right label'>00 00 10.616</span>
-	<div class="bdd-test">
-		<div class="scenario-name"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span> Scenario: User signs up with a new email</div>
-	</div>
-	
-	
-	
-	<ul class='steps'>
-		<li test-id='5' class='node given Fail' status='Fail'>
-			<div class="step-name" title="(stepdefs.SignupStepDef.user_navigates_to_the_bronze_sign_up_url_and_accepts_cookies())"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>Given user navigates to the bronze signup URL and accepts cookies</div>
-
-
-					<textarea disabled class="code-block">java.lang.AssertionError: expected:<true> but was:<false>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:120)
-	at org.junit.Assert.assertEquals(Assert.java:146)
-	at stepdefs.SignupStepDef.user_navigates_to_the_bronze_sign_up_url_and_accepts_cookies(SignupStepDef.java:34)
-	at ✽.user navigates to the bronze signup URL and accepts cookies(file:///C:/Users/91999/Desktop/RFF/RFF_BDD_Cucumber/src/test/resources/features/createaccount.feature:4)
-</textarea>
-		</li>
-		<li test-id='6' class='node and Skip' status='Skip'>
-			<div class="step-name" title="(stepdefs.SignupStepDef.the_user_enters_a_unique_email_address_and_clicks_continue_button())"><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And user enters a unique email address and clicks continue button</div>
-
-
-					<div class="node-step">Step skipped</div>
-		</li>
-		<li test-id='7' class='node and Skip' status='Skip'>
-			<div class="step-name" title="(stepdefs.SignupStepDef.the_user_enters_the_password_and_then_clicks_set_password_button())"><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And user enters the password and then clicks set password button</div>
-
-
-					<div class="node-step">Step skipped</div>
-		</li>
-		<li test-id='8' class='node and Skip' status='Skip'>
-			<div class="step-name" title="(stepdefs.SignupStepDef.the_user_enters_the_first_name_and_last_name())"><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And user enters the first name and last name</div>
-
-
-					<div class="node-step">Step skipped</div>
-		</li>
-		<li test-id='9' class='node and Skip' status='Skip'>
-			<div class="step-name" title="(stepdefs.SignupStepDef.the_user_clicks_the_sign_up_button())"><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And user clicks the sign-up button</div>
-
-
-					<div class="node-step">Step skipped</div>
-		</li>
-		<li test-id='10' class='node then Skip' status='Skip'>
-			<div class="step-name" title="(stepdefs.SignupStepDef.the_successfull_signup_message_should_be_displayed())"><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then successfull signup message should be displayed</div>
-
-
-					<div class="node-step">Step skipped</div>
-		</li>
-	</ul>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='12'>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Alert Feature</span>
-						<span class='test-time'>Jul 6, 2024 07:08:12 am</span>
+						<span class='test-time'>Jul 7, 2024 11:24:31 pm</span>
 						<span class='test-status right pass'>Pass</span>
 					</div>
 					<div class='test-content hide'>
@@ -260,11 +187,58 @@
 	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
 </div>
 
-<div class='scenario node' test-id='13' status='pass'>
+<div class='scenario node' test-id='2' status='pass'>
 
-	<span class='duration right label'>00 00 40.587</span>
+	<span class='duration right label'>00 00 25.188</span>
 	<div class="bdd-test">
 		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Create Alert in Production Environment</div>
+	</div>
+	
+	
+	
+	<ul class='steps'>
+		<li test-id='5' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.navigate_to_the_application_url())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given navigate to the application URL</div>
+
+
+		</li>
+		<li test-id='6' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.accept_cookies())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And accept cookies</div>
+
+
+		</li>
+		<li test-id='7' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.sign_in_with_valid_credentials())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And sign in with valid credentials</div>
+
+
+		</li>
+		<li test-id='8' class='node when Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.search_for_a_destination())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When search for a destination</div>
+
+
+		</li>
+		<li test-id='9' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.create_a_new_alert_with_specified_dates())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And create a new alert with specified dates</div>
+
+
+		</li>
+		<li test-id='10' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.should_see_the_confirmation_message())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should see the confirmation message</div>
+
+
+		</li>
+		<li test-id='11' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.should_be_able_to_logout_successfully())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user should be able to logout successfully</div>
+
+
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='13' status='pass'>
+
+	<span class='duration right label'>00 00 17.425</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Edit Alert in Production Environment</div>
 	</div>
 	
 	
@@ -286,17 +260,17 @@
 
 		</li>
 		<li test-id='19' class='node when Pass' status='Pass'>
-			<div class="step-name" title="(stepdefs.CreateAlertStepDef.search_for_a_destination())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When search for a destination</div>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.navigate_to_the_list_of_alerts())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When navigate to the list of alerts</div>
 
 
 		</li>
 		<li test-id='20' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(stepdefs.CreateAlertStepDef.create_a_new_alert_with_specified_dates())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And create a new alert with specified dates</div>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.edit_an_existing_alert())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And edit an existing alert</div>
 
 
 		</li>
 		<li test-id='21' class='node then Pass' status='Pass'>
-			<div class="step-name" title="(stepdefs.CreateAlertStepDef.should_see_the_confirmation_message())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should see the confirmation message</div>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.should_see_the_confirmation_message_for_edit())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should see the confirmation message for alert edited</div>
 
 
 		</li>
@@ -309,9 +283,9 @@
 </div>
 <div class='scenario node' test-id='24' status='pass'>
 
-	<span class='duration right label'>00 00 17.557</span>
+	<span class='duration right label'>00 00 27.002</span>
 	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Edit Alert in Production Environment</div>
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Delete Alert in Production Environment</div>
 	</div>
 	
 	
@@ -338,12 +312,12 @@
 
 		</li>
 		<li test-id='31' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(stepdefs.CreateAlertStepDef.edit_an_existing_alert())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And edit an existing alert</div>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.delete_an_existing_alert())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And delete an existing alert</div>
 
 
 		</li>
 		<li test-id='32' class='node then Pass' status='Pass'>
-			<div class="step-name" title="(stepdefs.CreateAlertStepDef.should_see_the_confirmation_message_for_edit())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should see the confirmation message for alert edited</div>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.should_see_the_confirmation_message_for_alert_deleted())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should see the confirmation message for alert deleted</div>
 
 
 		</li>
@@ -356,9 +330,9 @@
 </div>
 <div class='scenario node' test-id='35' status='pass'>
 
-	<span class='duration right label'>00 00 16.186</span>
+	<span class='duration right label'>00 00 30.537</span>
 	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Delete Alert in Production Environment</div>
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Check date range of 20 days for Bronze user</div>
 	</div>
 	
 	
@@ -375,26 +349,78 @@
 
 		</li>
 		<li test-id='40' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(stepdefs.CreateAlertStepDef.sign_in_with_valid_credentials())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And sign in with valid credentials</div>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.sign_in_with_bronze_user_credentials())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And sign in with Bronze user credentials</div>
 
 
 		</li>
 		<li test-id='41' class='node when Pass' status='Pass'>
-			<div class="step-name" title="(stepdefs.CreateAlertStepDef.navigate_to_the_list_of_alerts())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When navigate to the list of alerts</div>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.search_for_a_destination())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When search for a destination</div>
 
 
 		</li>
 		<li test-id='42' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(stepdefs.CreateAlertStepDef.delete_an_existing_alert())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And delete an existing alert</div>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.clicks_on_no_button_on_upgrade_membership_popup())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And clicks on No button on upgrade membership popup</div>
 
 
 		</li>
-		<li test-id='43' class='node then Pass' status='Pass'>
-			<div class="step-name" title="(stepdefs.CreateAlertStepDef.should_see_the_confirmation_message_for_alert_deleted())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should see the confirmation message for alert deleted</div>
+		<li test-id='43' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.create_a_new_alert_with_more_than_20_days_range())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And create a new alert with more than twenty days range</div>
 
 
 		</li>
-		<li test-id='44' class='node and Pass' status='Pass'>
+		<li test-id='44' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.user_should_see_the_error_message_for_20_days_maximum_date_range())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should see the error message for 20 days maximum date range</div>
+
+
+		</li>
+		<li test-id='45' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.should_be_able_to_logout_successfully())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user should be able to logout successfully</div>
+
+
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='47' status='pass'>
+
+	<span class='duration right label'>00 00 22.835</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Check date range of 45 days for Silver user</div>
+	</div>
+	
+	
+	
+	<ul class='steps'>
+		<li test-id='50' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.navigate_to_the_application_url())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given navigate to the application URL</div>
+
+
+		</li>
+		<li test-id='51' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.accept_cookies())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And accept cookies</div>
+
+
+		</li>
+		<li test-id='52' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.sign_in_with_silver_user_credentials())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And sign in with Silver user credentials</div>
+
+
+		</li>
+		<li test-id='53' class='node when Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.search_for_a_destination())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When search for a destination</div>
+
+
+		</li>
+		<li test-id='54' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.create_a_new_alert_with_more_than_45_days_range())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And create a new alert with more than Forty five days range</div>
+
+
+		</li>
+		<li test-id='55' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.user_should_see_the_error_message_for_45_days_maximum_date_range())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should see the error message for 45 days maximum date range</div>
+
+
+		</li>
+		<li test-id='56' class='node and Pass' status='Pass'>
 			<div class="step-name" title="(stepdefs.CreateAlertStepDef.should_be_able_to_logout_successfully())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user should be able to logout successfully</div>
 
 
@@ -403,10 +429,10 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='46'>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='58'>
 					<div class='test-heading'>
-						<span class='test-name'>Login feature</span>
-						<span class='test-time'>Jul 6, 2024 07:09:26 am</span>
+						<span class='test-name'>Sign-Up</span>
+						<span class='test-time'>Jul 7, 2024 11:26:34 pm</span>
 						<span class='test-status right pass'>Pass</span>
 					</div>
 					<div class='test-content hide'>
@@ -417,9 +443,94 @@
 	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
 </div>
 
-<div class='scenario node' test-id='47' status='pass'>
+<div class='scenario node' test-id='59' status='pass'>
 
-	<span class='duration right label'>00 00 11.408</span>
+	<span class='duration right label'>00 00 11.823</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: User signs up with a new email</div>
+	</div>
+	
+	
+	
+	<ul class='steps'>
+		<li test-id='62' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.SignupStepDef.user_navigates_to_the_bronze_sign_up_url_and_accepts_cookies())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given user navigates to the bronze signup URL and accepts cookies</div>
+
+
+		</li>
+		<li test-id='63' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.SignupStepDef.the_user_enters_a_unique_email_address_and_clicks_continue_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user enters a unique email address and clicks continue button</div>
+
+
+		</li>
+		<li test-id='64' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.SignupStepDef.the_user_enters_the_password_and_then_clicks_set_password_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user enters the password and then clicks set password button</div>
+
+
+		</li>
+		<li test-id='65' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.SignupStepDef.the_user_enters_the_first_name_and_last_name())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user enters the first name and last name</div>
+
+
+		</li>
+		<li test-id='66' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.SignupStepDef.the_user_clicks_the_sign_up_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user clicks the sign-up button</div>
+
+
+		</li>
+		<li test-id='67' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.SignupStepDef.the_successfull_signup_message_should_be_displayed())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then successfull signup message should be displayed</div>
+
+
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='69' status='pass'>
+
+	<span class='duration right label'>00 00 10.803</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: User signs up with an existing email</div>
+	</div>
+	
+	
+	
+	<ul class='steps'>
+		<li test-id='72' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.SignupStepDef.user_navigates_to_the_bronze_sign_up_url_and_accepts_cookies())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given user navigates to the bronze signup URL and accepts cookies</div>
+
+
+		</li>
+		<li test-id='73' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.SignupStepDef.user_enters_a_existing_email_address_and_clicks_continue_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user enters a existing email address and clicks continue button</div>
+
+
+		</li>
+		<li test-id='74' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.SignupStepDef.error_message_should_be_displayed())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then error message should be displayed</div>
+
+
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='76'>
+					<div class='test-heading'>
+						<span class='test-name'>Login feature</span>
+						<span class='test-time'>Jul 7, 2024 11:26:56 pm</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario node' test-id='77' status='pass'>
+
+	<span class='duration right label'>00 00 11.722</span>
 	<div class="bdd-test">
 		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Login with correct credentials</div>
 	</div>
@@ -427,46 +538,46 @@
 	
 	
 	<ul class='steps'>
-		<li test-id='50' class='node given Pass' status='Pass'>
+		<li test-id='80' class='node given Pass' status='Pass'>
 			<div class="step-name" title="(stepdefs.LoginStepDef.user_is_on_login_page())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given user is on login page</div>
 
 
 		</li>
-		<li test-id='51' class='node when Pass' status='Pass'>
+		<li test-id='81' class='node when Pass' status='Pass'>
 			<div class="step-name" title="(stepdefs.LoginStepDef.user_enters_username())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When user enters username</div>
 
 
 		</li>
-		<li test-id='52' class='node and Pass' status='Pass'>
+		<li test-id='82' class='node and Pass' status='Pass'>
 			<div class="step-name" title="(stepdefs.LoginStepDef.user_enters_password())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user enters password</div>
 
 
 		</li>
-		<li test-id='53' class='node and Pass' status='Pass'>
+		<li test-id='83' class='node and Pass' status='Pass'>
 			<div class="step-name" title="(stepdefs.LoginStepDef.user_clicks_on_login_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user clicks on Login button</div>
 
 
 		</li>
-		<li test-id='54' class='node then Pass' status='Pass'>
+		<li test-id='84' class='node then Pass' status='Pass'>
 			<div class="step-name" title="(stepdefs.LoginStepDef.page_title_should_be())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then verify the page title</div>
 
 
 		</li>
-		<li test-id='55' class='node and Pass' status='Pass'>
+		<li test-id='85' class='node and Pass' status='Pass'>
 			<div class="step-name" title="(stepdefs.LoginStepDef.user_clicks_on_account_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user clicks on account button</div>
 
 
 		</li>
-		<li test-id='56' class='node then Pass' status='Pass'>
+		<li test-id='86' class='node then Pass' status='Pass'>
 			<div class="step-name" title="(stepdefs.LoginStepDef.user_clicks_on_logout_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user clicks on logout button</div>
 
 
 		</li>
 	</ul>
 </div>
-<div class='scenario node' test-id='58' status='pass'>
+<div class='scenario node' test-id='88' status='pass'>
 
-	<span class='duration right label'>00 00 11.147</span>
+	<span class='duration right label'>00 00 11.921</span>
 	<div class="bdd-test">
 		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Login with incorrect credentials</div>
 	</div>
@@ -474,27 +585,27 @@
 	
 	
 	<ul class='steps'>
-		<li test-id='61' class='node given Pass' status='Pass'>
+		<li test-id='91' class='node given Pass' status='Pass'>
 			<div class="step-name" title="(stepdefs.LoginStepDef.user_is_on_login_page())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given user is on login page</div>
 
 
 		</li>
-		<li test-id='62' class='node when Pass' status='Pass'>
+		<li test-id='92' class='node when Pass' status='Pass'>
 			<div class="step-name" title="(stepdefs.LoginStepDef.user_enters_username())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When user enters username</div>
 
 
 		</li>
-		<li test-id='63' class='node and Pass' status='Pass'>
+		<li test-id='93' class='node and Pass' status='Pass'>
 			<div class="step-name" title="(stepdefs.LoginStepDef.user_enters_invalid_password())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user enters invalid password</div>
 
 
 		</li>
-		<li test-id='64' class='node and Pass' status='Pass'>
+		<li test-id='94' class='node and Pass' status='Pass'>
 			<div class="step-name" title="(stepdefs.LoginStepDef.user_clicks_on_login_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user clicks on Login button</div>
 
 
 		</li>
-		<li test-id='65' class='node then Pass' status='Pass'>
+		<li test-id='95' class='node then Pass' status='Pass'>
 			<div class="step-name" title="(stepdefs.LoginStepDef.user_should_get_an_error())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should get an error message</div>
 
 
@@ -503,10 +614,10 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='67'>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='97'>
 					<div class='test-heading'>
 						<span class='test-name'>Check Map page search feature</span>
-						<span class='test-time'>Jul 6, 2024 07:09:48 am</span>
+						<span class='test-time'>Jul 7, 2024 11:27:20 pm</span>
 						<span class='test-status right pass'>Pass</span>
 					</div>
 					<div class='test-content hide'>
@@ -517,9 +628,9 @@
 	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
 </div>
 
-<div class='scenario node' test-id='68' status='pass'>
+<div class='scenario node' test-id='98' status='pass'>
 
-	<span class='duration right label'>00 01 35.912</span>
+	<span class='duration right label'>00 00 28.460</span>
 	<div class="bdd-test">
 		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Check Map page search for Gold user</div>
 	</div>
@@ -527,48 +638,105 @@
 	
 	
 	<ul class='steps'>
-		<li test-id='71' class='node given Pass' status='Pass'>
+		<li test-id='101' class='node given Pass' status='Pass'>
 			<div class="step-name" title="(stepdefs.CreateAlertStepDef.navigate_to_the_application_url())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given navigate to the application URL</div>
 
 
 		</li>
-		<li test-id='72' class='node and Pass' status='Pass'>
+		<li test-id='102' class='node and Pass' status='Pass'>
 			<div class="step-name" title="(stepdefs.CreateAlertStepDef.accept_cookies())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And accept cookies</div>
 
 
 		</li>
-		<li test-id='73' class='node and Pass' status='Pass'>
+		<li test-id='103' class='node and Pass' status='Pass'>
 			<div class="step-name" title="(stepdefs.CreateAlertStepDef.sign_in_with_valid_credentials())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And sign in with valid credentials</div>
 
 
 		</li>
-		<li test-id='74' class='node when Pass' status='Pass'>
+		<li test-id='104' class='node when Pass' status='Pass'>
 			<div class="step-name" title="(stepdefs.MapPageStepDef.the_user_clicks_the_world_map_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When the user clicks the world map button</div>
 
 
 		</li>
-		<li test-id='75' class='node and Pass' status='Pass'>
+		<li test-id='105' class='node and Pass' status='Pass'>
 			<div class="step-name" title="(stepdefs.MapPageStepDef.enters_in_the_where_from_field(java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And enters "london" in the where from field</div>
 
 
 		</li>
-		<li test-id='76' class='node and Pass' status='Pass'>
+		<li test-id='106' class='node and Pass' status='Pass'>
 			<div class="step-name" title="(stepdefs.MapPageStepDef.the_user_selects_the_date_range_and_click_on_search_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects the date range and click on search button</div>
 
 
 		</li>
-		<li test-id='77' class='node and Pass' status='Pass'>
+		<li test-id='107' class='node and Pass' status='Pass'>
 			<div class="step-name" title="(stepdefs.MapPageStepDef.the_user_selects_a_random_destination_from_the_results())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects a random destination from the results</div>
 
 
 		</li>
-		<li test-id='78' class='node then Pass' status='Pass'>
+		<li test-id='108' class='node then Pass' status='Pass'>
 			<div class="step-name" title="(stepdefs.MapPageStepDef.the_map_should_zoom_in_to_the_selected_destination())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the map should zoom in to the selected destination</div>
 
 
 		</li>
-		<li test-id='79' class='node and Pass' status='Pass'>
+		<li test-id='109' class='node and Pass' status='Pass'>
 			<div class="step-name" title="(stepdefs.CreateAlertStepDef.should_be_able_to_logout_successfully())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user should be able to logout successfully</div>
+
+
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='111' status='pass'>
+
+	<span class='duration right label'>00 00 19.307</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Check Map page search for Bronze user</div>
+	</div>
+	
+	
+	
+	<ul class='steps'>
+		<li test-id='114' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.navigate_to_the_application_url())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given navigate to the application URL</div>
+
+
+		</li>
+		<li test-id='115' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.accept_cookies())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And accept cookies</div>
+
+
+		</li>
+		<li test-id='116' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.sign_in_with_bronze_user_credentials())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And sign in with Bronze user credentials</div>
+
+
+		</li>
+		<li test-id='117' class='node when Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.MapPageStepDef.the_user_clicks_the_world_map_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When the user clicks the world map button</div>
+
+
+		</li>
+		<li test-id='118' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.MapPageStepDef.enters_in_the_where_from_field(java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And enters "london" in the where from field</div>
+
+
+		</li>
+		<li test-id='119' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.MapPageStepDef.the_user_selects_the_date_range_and_click_on_search_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects the date range and click on search button</div>
+
+
+		</li>
+		<li test-id='120' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.MapPageStepDef.the_user_should_get_popup_for_membership_upgrade_with_membership_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user should get popup for membership upgrade with membership button</div>
+
+
+		</li>
+		<li test-id='121' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.MapPageStepDef.on_clicking_membership_button_user_redirects_to_pricing_page())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And on clicking membership button, user redirects to pricing page</div>
+
+
+		</li>
+		<li test-id='122' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepdefs.CreateAlertStepDef.should_be_able_to_logout_successfully())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should be able to logout successfully</div>
 
 
 		</li>
@@ -598,69 +766,7 @@
 	</div>
 	<!-- subview right -->
 </div>
-<!-- test view --><div id='exception-view' class='view hide'>
-	<section id='controls'>
-		<div class='controls grey lighten-4'>
-			<!-- search -->
-			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
-				<a href="#" class='search-div'>
-				<i class='material-icons'>search</i> Search
-				</a>
-				<div class='input-field left hide'>
-					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
-				</div>
-			</div>
-			<!-- search -->
-		</div>
-	</section>
-	<div class='subview-left left'>
-		<div class='view-summary'>
-			<ul id='exception-collection' class='exception-collection'>
-				<li class='exception displayed active'>
-					<div class='exception-heading'>
-						<span class='exception-name'>java.lang.AssertionError</span>
-						<span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
-					</div>
-					<div class='exception-content hide'>
-						<div class='exception-tests'>
-							<table class='bordered table-results'>
-								<thead>
-									<tr>
-										<th>Timestamp</th>
-										<th>TestName</th>
-										<th>StackTrace</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Jul 6, 2024 07:08:02 am</td>
-										<td class='linked' test-id='5'>Given user navigates to the bronze signup URL and accepts cookies</td>
-										<td>
-											<textarea disabled class="code-block">java.lang.AssertionError: expected:<true> but was:<false>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:120)
-	at org.junit.Assert.assertEquals(Assert.java:146)
-	at stepdefs.SignupStepDef.user_navigates_to_the_bronze_sign_up_url_and_accepts_cookies(SignupStepDef.java:34)
-	at ✽.user navigates to the bronze signup URL and accepts cookies(file:///C:/Users/91999/Desktop/RFF/RFF_BDD_Cucumber/src/test/resources/features/createaccount.feature:4)
-</textarea>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div class='subview-right left'>
-		<div class='view-summary'>
-			<h5 class='exception-name'></h5>
-		</div>
-	</div>
-</div>
-<!-- exception view --><div id='dashboard-view' class='view hide'>
+<!-- test view --><div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
 		<h5>Dashboard</h5>
 
@@ -674,31 +780,31 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Scenarios
-					<div class='panel-lead'>7</div>
+					<div class='panel-lead'>11</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>48</div>
+					<div class='panel-lead'>75</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jul 6, 2024 07:08:00 am</div>
+					<div class='panel-lead'>Jul 7, 2024 11:24:30 pm</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jul 6, 2024 07:11:24 am</div>
+			 		<div class='panel-lead'>Jul 7, 2024 11:28:08 pm</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>00 03 24.287</div>
+					<div class='panel-lead'>00 03 37.828</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -730,34 +836,34 @@
 		<script>
 			var statusGroup = {
                 parentCount: 4,
-				passParent: 3,
-				failParent: 1,
+				passParent: 4,
+				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				childCount: 7,
-				passChild: 6,
-				failChild: 1,
+				childCount: 11,
+				passChild: 11,
+				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				grandChildCount: 48,
-				passGrandChild: 42,
-				failGrandChild: 1,
+				grandChildCount: 75,
+				passGrandChild: 75,
+				failGrandChild: 0,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
-				skipGrandChild: 5,
+				skipGrandChild: 0,
 				infoGrandChild: 0,
 			};
 			</script>
 		
 		<script>
 			var timeline = {
-			        "Sign-Up":10.62,"Alert Feature":74.338,"Login feature":22.561,"Check Map page search feature":95.912
+			        "Alert Feature":123.028,"Sign-Up":22.631,"Login feature":23.648,"Check Map page search feature":47.772
 			};
 		</script>
 		

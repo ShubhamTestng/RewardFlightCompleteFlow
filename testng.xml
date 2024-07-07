@@ -3,11 +3,10 @@
 <suite name="Suite">
 
 
-    <test thread-count="5" name="Test">
+    <test thread-count="5" name="Test1">
         <classes>
             <class name="Runner.TestRunner"></class>
         </classes>
     </test> <!-- Test -->
-
 
 </suite> <!-- Suite -->

@@ -322,6 +322,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
         public WebElement getCityNames(){
             return cityNames;
         }
+
+        @FindBy(xpath="//div[@class='number_ui animated pulse']")
+        WebElement passengerCount;
+
+        public WebElement getPassengerCount(){
+            return passengerCount;
+        }
     }
 
 

@@ -18,7 +18,6 @@ import java.io.IOException;
 
 public class SignupStepDef {
     private SignupPage elements;
-    private WebDriverWait wait;
     private AppUtilities apputils;
     private ConfigReader configReader;
 
@@ -30,8 +29,9 @@ public class SignupStepDef {
         elements = new SignupPage(driver);
         try {driver.get(configReader.readFromPropertyFile("bronzeurl"));}
         catch(WebDriverException e) {}
-        elements.getAcceptCookies().click();
-        Assert.assertEquals(true,false);
+        try {elements.getAcceptCookies().click();}
+        catch(WebDriverException e) {}
+//        Assert.assertEquals(true,false);
     }
 
     @When("user enters a unique email address and clicks continue button")
@@ -40,6 +40,18 @@ public class SignupStepDef {
         elements.getEmailTextField().sendKeys(email);
         elements.getContinueButton().click();
 
+    }
+
+    @Given("user enters a existing email address and clicks continue button")
+    public void user_enters_a_existing_email_address_and_clicks_continue_button() {
+        elements.getEmailTextField().sendKeys("strokenavior@gmail.com");
+        elements.getContinueButton().click();
+    }
+
+    @Then("error message should be displayed")
+    public void error_message_should_be_displayed() {
+        String errorMsg = elements.getEmailError().getText();
+        Assert.assertEquals(errorMsg,"Email Already Exist");
     }
 
     @When("user enters the password and then clicks set password button")

@@ -19,9 +19,10 @@ import java.time.Duration;
 
 public class LoginStepDef {
     public LoginPage elements;
-    private WebDriverWait wait;
     public ConfigReader configReader;
     WebDriver driver = DriverFactory.getDriver();
+    private WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(2));
+
 
     @Given("user is on login page")
     public void user_is_on_login_page() throws Throwable {
@@ -60,11 +61,12 @@ public class LoginStepDef {
     @And("user clicks on Login button")
     public void user_clicks_on_login_button() {
         elements.getSignInButton().click();
+
     }
 
     @Then("verify the page title")
     public void page_title_should_be() {
-        wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+
         String title = "Easily Find Reward Flight Availability: Redeem British Airways Avios Points";
         wait.until(ExpectedConditions.titleIs(title));
         Assert.assertEquals(title,driver.getTitle());

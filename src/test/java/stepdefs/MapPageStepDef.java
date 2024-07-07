@@ -33,7 +33,7 @@ public class MapPageStepDef {
         for (int i = 0; i < 3; i++) {
             try {elements.getWorldMapButton().click();
                 break;}
-            catch (StaleElementReferenceException e) {}}
+            catch (Exception e) {}}
 
         try {
             apputils.waitForLoader();
@@ -45,7 +45,7 @@ public class MapPageStepDef {
     public void enters_in_the_where_from_field(String string) throws InterruptedException {
         Actions action = new Actions(driver);
         Thread.sleep(1000);
-        action.click(elements.getWhereFromField()).pause(1000).sendKeys("london").pause(1000).sendKeys(Keys.ENTER).build().perform();
+        action.click(elements.getWhereFromField()).pause(1000).sendKeys(string).pause(1000).sendKeys(Keys.ENTER).build().perform();
 
     }
     @When("the user selects the date range and click on search button")
@@ -60,8 +60,22 @@ public class MapPageStepDef {
         elements.getSearchButton().click();
 
     }
+
+    @Then("the user should get popup for membership upgrade with membership button")
+    public void the_user_should_get_popup_for_membership_upgrade_with_membership_button() {
+        Assert.assertEquals(elements.getUpgradeMembershipPopup().getText(),"You need to be a Silver or Gold member to use the world map search");
+        Assert.assertEquals(elements.getMembershipsButton().isDisplayed(),true);
+    }
+
+    @Then("on clicking membership button, user redirects to pricing page")
+    public void on_clicking_membership_button_user_redirects_to_pricing_page() {
+        elements.getMembershipsButton().click();
+        Assert.assertEquals(driver.getCurrentUrl(),"https://rewardflightfinder.com/pricing");
+    }
+
     @When("the user selects a random destination from the results")
     public void the_user_selects_a_random_destination_from_the_results() throws InterruptedException {
+
         int destinationNumber = java.util.concurrent.ThreadLocalRandom.current().nextInt(1, 101);
         elements.getSelectDestination(destinationNumber).click();
         Thread.sleep(5000);

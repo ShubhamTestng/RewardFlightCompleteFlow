@@ -22,7 +22,7 @@
         <enableOfflineMode>false</enableOfflineMode>
 
         <!-- use thumbnails for base64 images -->
-        <thumbnailForBase64>false</thumbnailForBase64>
+        <thumbnailForBase64>true</thumbnailForBase64>
 
         <!-- title of the document -->
         <documentTitle>FCPQ-DG Test Automation Extent Report</documentTitle>

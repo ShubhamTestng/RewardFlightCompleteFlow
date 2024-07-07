@@ -37,7 +37,8 @@ public class ApplicationHooks {
     public void quitBrowser(Scenario scenario) {
         //validate if scenario has failed
         if(scenario.isFailed()) {
-
+            byte [] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot,"image/png","Failure screenshot");
         }
         driver.quit();
     }

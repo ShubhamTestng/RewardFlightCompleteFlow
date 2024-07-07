@@ -74,6 +74,14 @@ public class SignupPage {
         return continueButton;
     }
 
+    @FindBy(xpath="//span[@class='error-msg']")
+    WebElement emailError;
+
+    public WebElement getEmailError(){
+
+        return emailError;
+    }
+
     @FindBy(xpath="//input[@name='password']")
     WebElement passwordTextField;
 
