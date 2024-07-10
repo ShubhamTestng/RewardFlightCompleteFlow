@@ -114,6 +114,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
             return invalidCredentials;
         }
 
+        public WebElement getSearchField(){
+
+            return searchField;
+        }
+
         @FindBy(xpath="//span[text()='Invalid email or password.']")
         WebElement invalidCredentials;
 
@@ -137,6 +142,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
         @FindBy(xpath="//button[text()='Search Now']")
         WebElement searchButton;
+
+        @FindBy(xpath="//div[@id='destination-dropdown']//div[@class=' css-1wa3eu0-placeholder']")
+        WebElement searchField;
 
         @FindBy(xpath="//button/span[text()='Create Alert']")
         WebElement createAlertButton;

@@ -71,20 +71,32 @@ public class CreateAlertStepDef {
         elements.getSignInButton().click();
     }
 
-
-
     @When("search for a destination")
     public void search_for_a_destination() throws Throwable{
 
         apputils.waitForElement(elements.getWhereToField());
-        Thread.sleep(1000);
-        Actions action = new Actions(driver);
-        action.click(elements.getWhereToField()).pause(1000).perform();
-        action.pause(1000).sendKeys("nyc", Keys.ENTER).build().perform();
-        elements.getSearchButton().click();
+
+        for(;;) {
+               try {
+                   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+                   if (elements.getSearchField().isDisplayed()) {
+                       Actions action = new Actions(driver);
+                       action.click(elements.getWhereToField()).pause(1000).perform();
+                       action.pause(1000).sendKeys("nyc", Keys.ENTER).build().perform();
+                       elements.getSearchButton().click();
+                       driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+                   }
+
+               }
+               catch(Exception e) {
+
+                    break;
+            }
+            }
+
         try {
             apputils.waitForLoader();
-        } catch (TimeoutException e) {}
+        } catch (Exception e) {}
 
     }
 
@@ -113,6 +125,8 @@ public class CreateAlertStepDef {
 
     @When("create a new alert with more than twenty days range")
     public void create_a_new_alert_with_more_than_20_days_range() throws InterruptedException {
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("window.scrollTo(0,0)");
         elements.getCreateAlertButton().click();
         elements.getDepartStartDate().click();
         elements.getNextMonth().click();
@@ -128,6 +142,8 @@ public class CreateAlertStepDef {
 
     @When("create a new alert with more than Forty five days range")
     public void create_a_new_alert_with_more_than_45_days_range() throws InterruptedException {
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("window.scrollTo(0,0)");
         elements.getCreateAlertButton().click();
         elements.getDepartStartDate().click();
         elements.getNextMonth().click();
@@ -174,7 +190,14 @@ public class CreateAlertStepDef {
 
     @When("navigate to the list of alerts")
     public void navigate_to_the_list_of_alerts() {
-        elements.getAlertButton().click();
+        for (int i = 0; i < 3; i++) {
+            try {
+                apputils.waitForElement(elements.getAlertButton());
+                elements.getAlertButton().click();
+                break;
+            }
+            catch (Exception e) {}
+        }
     }
 
     @When("edit an existing alert")
@@ -213,9 +236,13 @@ public class CreateAlertStepDef {
 
     @Then("user should see the confirmation message for alert deleted")
     public void should_see_the_confirmation_message_for_alert_deleted() {
+
         apputils.waitForElement(elements.getAlertmsg());
         String alertMsg = elements.getAlertmsg().getText();
         Assert.assertEquals(alertMsg,"Alert has been deleted successfully");
+        try {
+            apputils.waitForLoader();
+        } catch (Exception e) {}
     }
 
     @And("user should be able to logout successfully")

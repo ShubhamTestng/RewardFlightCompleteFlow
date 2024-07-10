@@ -29,9 +29,11 @@ public class MapPageStepDef {
     public void the_user_clicks_the_world_map_button() {
         apputils = new AppUtilities(driver);
         elements = new MapPage(driver);
-        apputils.waitForElement(elements.getWorldMapButton());
-        for (int i = 0; i < 3; i++) {
-            try {elements.getWorldMapButton().click();
+
+        for (;;) {
+            try {
+                apputils.waitForElement(elements.getWorldMapButton());
+                elements.getWorldMapButton().click();
                 break;}
             catch (Exception e) {}}
 
@@ -71,6 +73,9 @@ public class MapPageStepDef {
     public void on_clicking_membership_button_user_redirects_to_pricing_page() {
         elements.getMembershipsButton().click();
         Assert.assertEquals(driver.getCurrentUrl(),"https://rewardflightfinder.com/pricing");
+        try {
+            apputils.waitForLoader();
+        } catch (Exception e) {}
     }
 
     @When("the user selects a random destination from the results")

@@ -38,6 +38,7 @@ public class SignupStepDef {
     public void the_user_enters_a_unique_email_address_and_clicks_continue_button() {
         String email = "TestBronzeProd"+String.valueOf((int) (Math.random() * 9000) + 1000)+"@ymail.com";
         elements.getEmailTextField().sendKeys(email);
+        Assert.assertEquals(true,false);
         elements.getContinueButton().click();
 
     }

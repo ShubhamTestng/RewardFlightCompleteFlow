@@ -1,7 +1,7 @@
 
 Feature: Alert Feature
 
-  Scenario: Create Alert in Production Environment
+  Scenario: Create Alert
     Given navigate to the application URL
     And accept cookies
     And sign in with valid credentials
@@ -11,8 +11,7 @@ Feature: Alert Feature
     And user should be able to logout successfully
 
 
-
-  Scenario: Edit Alert in Production Environment
+  Scenario: Edit Alert
     Given navigate to the application URL
     And accept cookies
     And sign in with valid credentials
@@ -22,7 +21,7 @@ Feature: Alert Feature
     And user should be able to logout successfully
 
 
-  Scenario: Delete Alert in Production Environment
+  Scenario: Delete Alert
     Given navigate to the application URL
     And accept cookies
     And sign in with valid credentials

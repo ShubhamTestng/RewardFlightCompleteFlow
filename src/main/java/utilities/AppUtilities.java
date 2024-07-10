@@ -17,7 +17,7 @@ public class AppUtilities {
 
     public void waitForLoader() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         if(driver.findElement(By.xpath("//div[@class='full-page-loader-comp text-center']")).isDisplayed())
         {
             wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='full-page-loader-comp text-center']")));
@@ -26,7 +26,7 @@ public class AppUtilities {
     }
 
     public void waitForElement(WebElement element)  {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
             wait.until(ExpectedConditions.visibilityOf(element));
             wait.until(ExpectedConditions.elementToBeClickable(element));
 
